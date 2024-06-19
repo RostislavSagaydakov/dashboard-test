@@ -1,0 +1,33 @@
+.menu-toggle {
+  position: absolute;
+  left: 100%;
+  top: 1rem;
+  background: var(--blue);
+  color: var(--light);
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 50% 50% 0;
+  cursor: pointer;
+  display: none;
+
+  @media all and (width < 1024px){
+    display: flex;
+  }
+
+  .icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    transition: var(--default-animation);
+    transform: rotate(0);
+  }
+}
+
+#sidebar.active {
+  .menu-toggle {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}

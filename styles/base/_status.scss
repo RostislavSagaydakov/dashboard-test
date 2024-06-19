@@ -1,0 +1,20 @@
+.status {
+  display: inline-block;
+  border-radius: .4rem;
+  padding: .3rem 1.1rem;
+  min-width: 8rem;
+  box-sizing: border-box;
+  text-align: center;
+
+  &.active {
+    color: var(--status-active-text);
+    background: var(--status-active-background);
+    border: 1px solid var(--status-active-border);
+  }
+
+  &.inactive {
+    color: var(--status-inactive-text);
+    background: var(--status-inactive-background);
+    border: 1px solid var(--status-inactive-border);
+  }
+}

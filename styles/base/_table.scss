@@ -1,0 +1,85 @@
+table {
+  width: 100%;
+  margin-bottom: 3rem;
+
+  tbody {
+    @media all and (width < 768px){
+      display: flex;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--gray6);
+    }
+
+    tr {
+      transition: 600ms ease all;
+      position: relative;
+      left: -2rem;
+      opacity: 0;
+      &.visible {
+        left: 0;
+        opacity: 1;
+      }
+
+      @media all and (width < 768px){
+        flex:1 1 50%;
+        display: flex;
+        gap: .6rem;
+        flex-direction: column;
+        border-bottom: 1px solid var(--gray6);
+        padding: 1rem 0;
+      }
+
+
+      @media all and (width < 680px){
+        flex: 1 1 100%;
+      }
+
+      &:nth-child(even) {
+        @media all and (width < 768px) and (width > 680px){
+          border-left: 1px solid var(--gray6);
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+
+  th {
+    text-align: left;
+    color: var(--gray5);
+    padding: 1.4rem 1rem 1.4rem 0;
+    position: relative;
+
+
+    @media all and (width < 768px){
+      display: none;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: -38px;
+      right: -38px;
+      bottom: 0;
+      height: 1px;
+      background: var(--gray6);
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  td {
+    border-bottom: 1px solid var(--gray6);
+    padding: 2.4rem 1rem 2.4rem 0;
+
+    @media all and (width < 768px){
+      border-style: none;
+      padding: 0 1.5rem;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      width: 1%;
+    }
+  }
+}

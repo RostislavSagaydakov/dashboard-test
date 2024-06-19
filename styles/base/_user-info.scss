@@ -1,0 +1,52 @@
+.user_info {
+  padding-top: 2rem;
+  display: grid;
+  grid-template:
+          "avatar name"
+          "avatar description";
+  column-gap: 1.2rem;
+  grid-template-rows: auto auto;
+  grid-template-columns: 4.2rem 1fr;
+  opacity: 0;
+  transition: var(--default-animation);
+  transform: translateX(-4rem);
+
+  &-avatar {
+    grid-area: avatar;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &-name {
+    grid-area: name;
+    transition: var(--default-animation);
+
+    @media all and (width < 1024px) {
+      display: none;
+    }
+  }
+
+  &-description {
+    grid-area: description;
+    color: var(--gray3);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    transition: var(--default-animation);
+
+    @media all and (width < 1024px) {
+      display: none;
+    }
+  }
+}
+
+#sidebar.active {
+  .user_info {
+    &-name,
+    &-description {
+      @media all and (width < 1024px) {
+        display: block;
+      }
+    }
+  }
+}

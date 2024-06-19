@@ -1,0 +1,59 @@
+.container {
+  background: var(--light);
+  padding: 3rem 3.8rem 4rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: var(--container-box-shadow);
+
+  @media screen and (width < 1024px) {
+    padding: 2rem;
+  }
+
+  &-heading {
+    display: grid;
+    grid-template-areas:
+      "title search"
+      "status search";
+    grid-template-columns: 1fr auto;
+    margin-bottom: 4rem;
+
+
+    @media screen and (width < 640px) {
+      grid-template-areas:
+        "title"
+        "status"
+        "search";
+      row-gap: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-title {
+    grid-area: title;
+    color: var(--dark);
+    font-size: 2.2rem;
+    line-height: 3.3rem;
+    font-weight: 600;
+    margin-bottom: .7rem;
+  }
+
+  .user_status {
+    grid-area: status;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+
+    &.active {
+      color: var(--member-active);
+    }
+
+    &.inactive {
+      color: var(--member-inactive);
+    }
+  }
+}
+
+.search_form {
+  grid-area: search;
+  align-content: center;
+}

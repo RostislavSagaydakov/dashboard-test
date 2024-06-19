@@ -1,0 +1,13 @@
+#sidebar {
+  @media screen and (width < 1024px) {
+    padding: 1.5rem;
+  }
+
+  &.active {
+    max-width: 32rem;
+    @media screen and (width < 1024px) {
+      box-shadow: 0 0 3.4rem 0 var(--gray8);
+      transition: var(--default-animation);
+    }
+  }
+}

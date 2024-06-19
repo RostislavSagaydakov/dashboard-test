@@ -1,0 +1,56 @@
+html,
+body,
+#wrapper {
+  min-height: 100vh;
+}
+
+#wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+#main {
+  width: clamp(32rem, var(--full-size), 100vw);
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  @media screen and (width >= 1024px) {
+    display: flex;
+    gap: 7.1rem;
+    padding-right: 9.5rem;
+  }
+  @media screen and (width < 1024px) {
+    padding: 3rem 3rem 3rem 12rem;
+  }
+}
+
+#sidebar {
+  flex: 0 1 30.6rem;
+  padding: 3.6rem 2.8rem;
+  background: var(--light);
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  position: sticky;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  box-shadow: var(--container-box-shadow);
+
+  @media screen and (width < 1024px) {
+    position: fixed;
+  }
+}
+
+#content {
+  flex: 1;
+  max-width: 96.8rem;
+  padding-block: 4.1rem;
+}
+
+.nav-container {
+  flex: 1;
+  overflow: auto;
+}

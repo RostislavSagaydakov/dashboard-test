@@ -1,0 +1,23 @@
+.loader {
+  position: fixed;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  transition: var(--default-animation);
+  opacity: 1;
+
+  .icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.loaded {
+  > .loader {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
